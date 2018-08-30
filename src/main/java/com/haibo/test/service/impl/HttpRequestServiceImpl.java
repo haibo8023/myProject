@@ -69,7 +69,7 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                         String rtncode = httpClientUtil2.doPost(geocoderUrl, map2, "utf-8");
                         JSONObject rtnobject = JSONObject.parseObject(rtncode);
                         log.warn(cityInfo.toString() + "定位结果通知", rtnobject.toString());
-                        mailService.sendHtmlMail("USERNAME@139.com", "定位结果通知", rtnobject.toString());
+                        mailService.sendHtmlMail("15756308704@139.com", "定位结果通知", rtnobject.toString());
                         httpClientUtil1 = new HttpClientUtil();
                         Map<String, String> map = new HashMap<String, String>();
                         map.put("nick", "bu661");
@@ -78,7 +78,7 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                         JSONObject jsonObject = JSONObject.parseObject(rtn);
                         Message response = (Message) JSONObject.toJavaObject(jsonObject, Message.class);
                         log.warn("点亮结果:" + response.toString());
-                        MailService.sendHtmlMail("USERNAME@139.com", "点亮结果通知", response.toString());
+                        MailService.sendHtmlMail("15756308704@139.com", "点亮结果通知", response.toString());
                     }
                     if (testPrint(cityInfo.getTotal())) {
                         System.out.println(sdf.format(new Date()) + cityInfo.toString());
@@ -86,7 +86,7 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                     }
                     if (useLoop(cityInfo.getTotal())) {
                         log.warn("通知，城市:" + cityInfo.getCity() + cityInfo.getTotal());
-                        mailService.sendHtmlMail("USERNAME@139.com", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
+                        mailService.sendHtmlMail("15756308704@139.com", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
                     }
                 }
             } else {
