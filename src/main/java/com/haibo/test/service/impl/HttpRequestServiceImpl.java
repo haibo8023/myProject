@@ -71,7 +71,7 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                         mailService.sendHtmlMail("15756308704@139.com", "定位结果通知", rtnobject.toString());
                         httpClientUtil1 = new HttpClientUtil();
                         Map<String, String> map = new HashMap<String, String>();
-                        map.put("nick", "bu661");
+                        map.put("nick", "bo" + selectOne.getId());
                         map.put("customer", selectOne.getCustomer());
                         String rtn = httpClientUtil1.doPost(commitUrl, map, "utf-8");
                         JSONObject jsonObject = JSONObject.parseObject(rtn);
