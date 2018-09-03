@@ -54,7 +54,6 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
             ResponseVo responseVo = (ResponseVo) JSONObject.toJavaObject(jsStr, ResponseVo.class);
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             if (null != responseVo && responseVo.getCode().equals(200)) {
-                //System.out.println(sdf.format(new Date()) + responseVo.toString());
                 List<CityInfo> cityInfoList = responseVo.getRanks();
                 for (CityInfo cityInfo : cityInfoList) {
                     if (useCommit(cityInfo.getTotal())) {
@@ -82,11 +81,11 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                     }
                     if (testPrint(cityInfo.getTotal())) {
                         System.out.println(sdf.format(new Date()) + cityInfo.toString());
-                        //mailService.sendHtmlMail("15756308704@139.com", "准备", cityInfo.toString());
                     }
                     if (useLoop(cityInfo.getTotal())) {
                         log.warn("通知，城市:" + cityInfo.getCity() + cityInfo.getTotal());
                         mailService.sendHtmlMail("15756308704@139.com", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
+                        mailService.sendHtmlMail("18720918660@wo.cn", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
                     }
                 }
             } else {
@@ -95,11 +94,12 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
             }
         } catch (Exception e) {
             e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 
     //使用循环判断
-    public static boolean useLoop(String targetValue) {
+    private static boolean useLoop(String targetValue) {
         String[] array = {"86", "87", "886", "887", "8886", "8887", "88886", "88887", "888886", "888887"};
         for (String s : array) {
             if (s.equals(targetValue)) {
@@ -141,7 +141,7 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
         return false;
     }
 
-    public static void playSound() throws MalformedURLException, FileNotFoundException, InterruptedException {
+    private static void playSound() throws MalformedURLException, FileNotFoundException, InterruptedException {
         //选择播放文件
         File file = new File("D:\\guangData\\src\\main\\resources\\f1.WAV");
         //创建audioclip对象
