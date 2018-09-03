@@ -11,7 +11,6 @@ import com.haibo.test.utils.MailService;
 import com.xdbigdata.framework.service.BaseService;
 import com.xdbigdata.framework.service.BaseServiceImpl;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -33,14 +32,12 @@ import java.util.Map;
 @Slf4j
 @Service
 public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMapper> implements BaseService<Customer, CustomerMapper> {
-    @Autowired
-    private MailService mailService;
-    private HttpClientUtil httpClientUtil = null;
-    private HttpClientUtil httpClientUtil1 = null;
-    private HttpClientUtil httpClientUtil2 = null;
 
     @Scheduled(fixedRate = 100)
     public void testMain() throws Exception {
+        HttpClientUtil httpClientUtil = null;
+        HttpClientUtil httpClientUtil1 = null;
+        HttpClientUtil httpClientUtil2 = null;
         String url = "https://www.jiyou-tech.com/2018/287/php/get_rank.php";
         String commitUrl = "https://www.jiyou-tech.com/2018/287/php/add_light.php";
         String geocoderUrl = "https://www.jiyou-tech.com/2018/287/php/geocoder.php";
@@ -68,7 +65,7 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                         String rtncode = httpClientUtil2.doPost(geocoderUrl, map2, "utf-8");
                         JSONObject rtnobject = JSONObject.parseObject(rtncode);
                         log.warn(cityInfo.toString() + "定位结果通知", rtnobject.toString());
-                        mailService.sendHtmlMail("15756308704@139.com", "定位结果通知", rtnobject.toString());
+                        MailService.sendHtmlMail("15756308704@139.com", "定位结果通知", rtnobject.toString());
                         httpClientUtil1 = new HttpClientUtil();
                         Map<String, String> map = new HashMap<String, String>();
                         map.put("nick", "bo" + selectOne.getId());
@@ -84,8 +81,8 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                     }
                     if (useLoop(cityInfo.getTotal())) {
                         log.warn("通知，城市:" + cityInfo.getCity() + cityInfo.getTotal());
-                        mailService.sendHtmlMail("15756308704@139.com", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
-                        mailService.sendHtmlMail("18720918660@wo.cn", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
+                        MailService.sendHtmlMail("15756308704@139.com", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
+                        MailService.sendHtmlMail("18720918660@wo.cn", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
                     }
                 }
             } else {
