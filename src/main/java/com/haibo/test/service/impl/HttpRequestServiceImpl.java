@@ -50,7 +50,7 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
             String InfoRtn = httpClientUtil3.doPost(infoUrl, createMap, charset);
             JSONObject infoStr = JSONObject.parseObject(InfoRtn);
             UserInfo userInfo = (UserInfo) JSONObject.toJavaObject(infoStr, UserInfo.class);
-            if (null != userInfo && userInfo.getCode().equals(200) && userInfo.getLight_state().equals(0)) {
+            if (null != userInfo && userInfo.getCode().equals(200) && !userInfo.getLight_state().equals(1)) {
                 JSONObject jsStr = JSONObject.parseObject(httpOrgCreateTestRtn);
                 ResponseVo responseVo = (ResponseVo) JSONObject.toJavaObject(jsStr, ResponseVo.class);
                 SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
