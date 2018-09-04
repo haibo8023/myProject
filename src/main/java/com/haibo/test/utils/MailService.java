@@ -21,9 +21,9 @@ import java.util.Properties;
 public class MailService {
     private static final String HOST = "smtp.163.com";
     private static final Integer PORT = 25;
-    private static final String USERNAME = "15756308704@163.com";
+    private static final String USERNAME = "13281468418@163.com";
     private static final String PASSWORD = "lt105201";
-    private static final String EMAILFORM = "15756308704@163.com";
+    private static final String EMAILFORM = "13281468418@163.com";
     private static JavaMailSenderImpl mailSender = createMailSender();
     /**
      * 邮件发送器
