@@ -2,9 +2,11 @@ package com.haibo.test.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.haibo.test.mapper.CustomerMapper;
-import com.haibo.test.model.domain.*;
+import com.haibo.test.model.domain.CityInfo;
+import com.haibo.test.model.domain.Customer;
+import com.haibo.test.model.domain.Message;
+import com.haibo.test.model.domain.ResponseVo;
 import com.haibo.test.utils.HttpClientUtil;
-import com.haibo.test.utils.MailService;
 import com.xdbigdata.framework.service.BaseService;
 import com.xdbigdata.framework.service.BaseServiceImpl;
 import lombok.extern.slf4j.Slf4j;
@@ -45,12 +47,12 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
             httpClientUtil = new HttpClientUtil();
             Map<String, String> createMap = new HashMap<String, String>();
             createMap.put("customer", "0AmYQr_B-Wr3W2J7tArcFIdMk_iLRyuVp9UNa0Fe8xcLUgrsWYVO6wpPAnrVlieb21YacYaSktmiGr2HtgtKYAURsn4G0mU7mTdMFlUNSrlfSTGkWE53SSICXJAdPsGrlxCo2EPcjxji6CIXjhVCLoJwihqhjSQrrnklZdrwVAQ%3D");
-            httpClientUtil3 = new HttpClientUtil();
+//            httpClientUtil3 = new HttpClientUtil();
             String httpOrgCreateTestRtn = httpClientUtil.doPost(url, createMap, charset);
-            String InfoRtn = httpClientUtil3.doPost(infoUrl, createMap, charset);
-            JSONObject infoStr = JSONObject.parseObject(InfoRtn);
-            UserInfo userInfo = (UserInfo) JSONObject.toJavaObject(infoStr, UserInfo.class);
-            if (null != userInfo && userInfo.getCode().equals(200) && !userInfo.getLight_state().equals(1)) {
+//            String InfoRtn = httpClientUtil3.doPost(infoUrl, createMap, charset);
+//            JSONObject infoStr = JSONObject.parseObject(InfoRtn);
+//            UserInfo userInfo = (UserInfo) JSONObject.toJavaObject(infoStr, UserInfo.class);
+            //if (null != userInfo && userInfo.getCode().equals(200) && !userInfo.getLight_state().equals(1)) {
                 JSONObject jsStr = JSONObject.parseObject(httpOrgCreateTestRtn);
                 ResponseVo responseVo = (ResponseVo) JSONObject.toJavaObject(jsStr, ResponseVo.class);
                 SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
@@ -68,8 +70,8 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                             map2.put("customer", selectOne.getCustomer());
                             String rtncode = httpClientUtil2.doPost(geocoderUrl, map2, "utf-8");
                             JSONObject rtnobject = JSONObject.parseObject(rtncode);
-                            log.warn(cityInfo.toString() + "定位结果通知", rtnobject.toString());
-                            MailService.sendHtmlMail("15756308704@139.com", "定位结果通知", rtnobject.toString());
+                            log.warn(cityInfo.getCity() + "定位结果通知", rtnobject.toString());
+                            //MailService.sendHtmlMail("15756308704@139.com", "定位结果通知", rtnobject.toString());
                             httpClientUtil1 = new HttpClientUtil();
                             Map<String, String> map = new HashMap<String, String>();
                             map.put("nick", "bo" + selectOne.getId());
@@ -78,22 +80,22 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                             JSONObject jsonObject = JSONObject.parseObject(rtn);
                             Message response = (Message) JSONObject.toJavaObject(jsonObject, Message.class);
                             log.warn("点亮结果:" + response.toString());
-                            MailService.sendHtmlMail("15756308704@139.com", "点亮结果通知", response.toString());
+                            //MailService.sendHtmlMail("15756308704@139.com", "点亮结果通知", response.toString());
                         }
                         if (testPrint(cityInfo.getTotal())) {
                             System.out.println(sdf.format(new Date()) + cityInfo.toString());
                         }
                         if (useLoop(cityInfo.getTotal())) {
                             log.warn("通知，城市:" + cityInfo.getCity() + cityInfo.getTotal());
-                            MailService.sendHtmlMail("15756308704@139.com", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
-                            MailService.sendHtmlMail("18720918660@wo.cn", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
+                            //MailService.sendHtmlMail("15756308704@139.com", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
+                            //MailService.sendHtmlMail("18720918660@wo.cn", "通知，城市:" + cityInfo.getCity(), cityInfo.getCity() + cityInfo.getTotal());
                         }
                     }
                 } else {
                     System.out.println(sdf.format(new Date()) + "请求主机失败");
                     log.error(sdf.format(new Date()) + "请求主机失败");
                 }
-            }
+            //}
         } catch (Exception e) {
             e.printStackTrace();
             log.error(e.getMessage());
@@ -128,7 +130,7 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
         if (value >= 85 && value < 88) {
             return true;
         }
-        if (value >= 885 && value < 888) {
+        if (value >= 881 && value < 888) {
             return true;
         }
         if (value >= 8885 && value < 8888) {
