@@ -1,0 +1,68 @@
+/*
+ Navicat MySQL Data Transfer
+
+ Source Server         : 127.0.0.1_3306
+ Source Server Type    : MySQL
+ Source Server Version : 80011
+ Source Host           : 192.168.2.198:3306
+ Source Schema         : test
+
+ Target Server Type    : MySQL
+ Target Server Version : 80011
+ File Encoding         : 65001
+
+ Date: 14/09/2018 09:05:25
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for t_customer
+-- ----------------------------
+DROP TABLE IF EXISTS `t_customer`;
+CREATE TABLE `t_customer`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `city` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `customer` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `latitude` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `longitude` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `city`(`city`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_customer
+-- ----------------------------
+INSERT INTO `t_customer` VALUES (1, '南京市', 'MPDEEmF31RBj_cuhJuZ0uyBfDAjwmIzqWc6dGciHOMsKXP-4d2a81Fz-wP_KFAeSsRPOTUg2CZTdt-iAzPXSzUNZ8p8qbAci15puKp7bwHWvKQA2TuTO8AezBdp9dh39sA-9LWIgo5iV-rfDUTjzU1iTZWJsc-Gb2d1Dt-IAWlY=', '32.05829', '118.795988');
+INSERT INTO `t_customer` VALUES (2, '北京市', 'mpGhxbaLBJbkP-t-BCeTYsRBnHMIuO7Z16LI2Ugi_0tdn2r33-7bpxRlIur3v31gM6myzjj2SdAMoKvD8Pp2BmB7nDWKI522awPcoEiWqvHc2m2g1Ne2AijTDEhfxr9v-wAtvBVWjbzh6htGaKpK-INorKKEUpLUWa79Maarf18=', '39.904602', '116.406987');
+INSERT INTO `t_customer` VALUES (3, '上海市', 'rlHlJphEsh-G37vg2Gp5KOcpHoFfPjJNsI41xW_22jc2-skEam_SvyeQLp14R91MV73mgxgOhBQjju5FPFu5FXe3WOmwWzHzfmZeghF2ARNgJNqhP7QJPyPOI7knvn7SQc-W0W5VURbJPpP9d8lei_hL_mrAIWQVULeeNDLyKCs=', '31.229983', '121.473989');
+INSERT INTO `t_customer` VALUES (4, '乌鲁木齐市', 'UdtgIPheY4JBtjY0jR8OMJQD5dMiiL3cNdFTtXj7Pk9h90z2s7tflVidUEWSuLTZ-p-v5MQb-7IyEEC-dApUbuFjdx-UEKuUywz5EzR-oCmBiqeRP4DYe2x3MMVIiOytpKJZ98Odr-V8mFQF2duAC9PQxy16TITX7I3NL87-EUQ=', '43.793234', '87.627013');
+INSERT INTO `t_customer` VALUES (5, '银川市', 'gQTie5JySKcLthEWKU4xmlPBL1lVEhcBIDXwZmaFfGvfKSe_FHuYjCCRDrLtWfwm3V85k-fsseTWLG9YaTeUC5kkS6nMb6BWRD73RkOm6w0jEqt9HutSWD_6mTdHs822-T5Fu3rE-7zXKogfSVt9H4-Yb7U3LZdC7Jntthi8SQ4=', '38.548675', '106.370048');
+INSERT INTO `t_customer` VALUES (6, '重庆市', 'PebNYk1B9e7BSncGS-CicNDXGEbK5SZKzbd7evvFxEE-BQXdmpb8TK1BoOQjUjJ4748TMW6epAdGlId6W8TqaZeFq52SZW7Wz2Yt_G-ADKpHJvlxNqisLW50cqd_QqtyzRMKWs5qzto7ded22QsJV9VdrxvbmZy13wfxLnIHRnc=', '29.562709', '106.552002');
+INSERT INTO `t_customer` VALUES (7, '青岛市', 'y5xcSlpqidgpEmLXfeoz1XdQr3tZ2DuKWsI8-ba9fLyPqeCAHImLBvjxDp_w22W9J2nv_DKnI1WoHhclri45q8W_m6EqNIHlBNQgmY0B5vwxTlzqqXU2n1K5WNjFeYRFV-ijNwgMKTYCykkHM8RCH7Q66OORmsFn86p72_R-KeQ=', '36.066095', '120.382995');
+INSERT INTO `t_customer` VALUES (8, '绍兴市', 'GiETI5u6cgYjq0UMyOvulIQx9cFD060VLVKTk2xtk0FPDIyjZETQhnK6I4vBczItwTp6NkkPgM9Eb0l3XZkcIt2FFbTbf4S8NP3quJ2f7kW1h1rcRZlYFc92LALabpBaXlm9Ttr4cdPUa7ZwJJqyqS6eiRp9p5bhENVRs9J_CMI=', '29.983091', '120.587631');
+INSERT INTO `t_customer` VALUES (9, '郑州市', 'Ml3aDjOYZx-TZsPD6TTIYxjSHVQmjXI2D7uMrehtFErlBzmnxBE0UDC2sCkJm9NF_3B9nD9HjxXVRYLW5g6D9cNuloXkczNCZWyPOcVJKbNFg5_kvw-uO54hb41qQ-lZ3Bw8HUB6hkLQhlYpNwZB37LxwoIk8voAqDJrUMycx2E=', '34.747194', '113.625001');
+INSERT INTO `t_customer` VALUES (10, '南宁市', 'lsSplNPyF4eM6YvYjntK1gNcvTQwcpgty11hPeCItp1x2U7qHDiF1-CJNBBFu6vX_HALHv_nbauokNwUMxSWDS2OsRs9NzkXlOwLqEYxDXap9XnHXn4lRZ3-VTuojcUmqycHhK-ggV6H0jrf43PtYXvRgTRwrdlsjaHOYLHCYFs=', '22.816289', '108.366998');
+INSERT INTO `t_customer` VALUES (11, '西宁市', 'mls08H89m5pQ1xVrWTcAyc4ZWkAzv6ErKwk7DLaB43FfoeqBc1Cisn6qoKyjd_hqGJrIJNCH1xiYhEghb5TiBMIuPTVhF6YE2kT_bbdTZ_hgMXGEw7NxDonE5iEvCFuhuRlf10GCtQIOrxPTFLA28fSjj8MXivh8VQstWZiQJmE=', '36.617217', '101.778021');
+INSERT INTO `t_customer` VALUES (12, '香港特别行政区', 'tV65xfTuwXsMibFfsVGBOpUAVt6pLgQuAFca8uvGS1r1WjgIHj9R29AMOXAYAmQf7zKJl3KRFnFgRowFiJI1rEcoYJ4xgFOTs5xql87vScxZ5UnJ4zwXBO03-L8VmQiL0beWeIKN8y7UvgCI46AkAT35k_2ZTsNluBxMHyCO14A=', '22.396414', '114.109502');
+INSERT INTO `t_customer` VALUES (13, '保定市', 'tV65xfTuwXsMibFfsVGBOpUAVt6pLgQuAFca8uvGS1r1WjgIHj9R29AMOXAYAmQf7zKJl3KRFnFgRowFiJI1rEcoYJ4xgFOTs5xql87vScxZ5UnJ4zwXBO03-L8VmQiL0beWeIKN8y7UvgCI46AkAT35k_2ZTsNluBxMHyCO14A=', '38.90694', '115.453438');
+INSERT INTO `t_customer` VALUES (14, '十堰市', 'tV65xfTuwXsMibFfsVGBOpUAVt6pLgQuAFca8uvGS1r1WjgIHj9R29AMOXAYAmQf7zKJl3KRFnFgRowFiJI1rEcoYJ4xgFOTs5xql87vScxZ5UnJ4zwXBO03-L8VmQiL0beWeIKN8y7UvgCI46AkAT35k_2ZTsNluBxMHyCO14A=', '32.630985', '110.786172');
+INSERT INTO `t_customer` VALUES (15, '太原市', 'mls08H89m5pQ1xVrWTcAyc4ZWkAzv6ErKwk7DLaB43FfoeqBc1Cisn6qoKyjd_hqGJrIJNCH1xiYhEghb5TiBMIuPTVhF6YE2kT_bbdTZ_hgMXGEw7NxDonE5iEvCFuhuRlf10GCtQIOrxPTFLA28fSjj8MXivh8VQstWZiQJmE=', '37.544807', '112.540278');
+INSERT INTO `t_customer` VALUES (16, '阜阳市', 'je4-zU2mnN_ZzEE9pu1eqYaoUp8KCt_VQdzDdd4oxIiVvUnaQwBPFi29BcsGZ5j815IZexskwicMMkxuco-pV8JpJNujPC21E6lAC5LqXYm04-EHH4kbPq1eu8lkZsNIzRnjTHBk-4EB5TnlEal85R9YmG3oPnLidrziP74otIc=', '32.889806', '115.814005');
+INSERT INTO `t_customer` VALUES (17, '营口市', 'OzW9za6TkHBdtGxtoeVvlPCacqQ07ZONj8HlXvYGuK0L1YiEq5vjnel9O6cCLN-wmujMI7C7omGMBD4DSmKdvsdp6RxqvBRsB9QmEisA6v3UsrW71Q-VdaNmACBJ13d1f4owLsJTrkohJKqEtJN8jgMXaFlv9pExDiQDQUJ9SSo=', '40.667405', '122.234991');
+INSERT INTO `t_customer` VALUES (18, '海口市', 'Dd7kjaH2QsM-AdbHh2XJyPlhdWgvf_AhkRZ5dSptWSMRmoNcARTWh8OqanEDdb4g-_iVSruqANR9ZaHDKPJSS0YFNhAQXM2mUOBHMeDsAzJ5G3mzf48ND4thdhmVFwPWxnWNJwSUGE_xf849VQ1n005iJxGsxVzEgxOBqYr9IbU=', '20.038188', '110.318992');
+INSERT INTO `t_customer` VALUES (19, '成都市', 'U90N6xJrO3xrx3xLuin3M5S19IjiunUhVjnqbWbvqmYxu8td4psizVKJFY3Kv49gw6knZH27sS6SKu29ljiJXUgWdDSc4EdOKX-WekJD2SAXSTitKZSyWERefDbBWaO56q4R9dw2JeSx7L2e5RQgxzZDvSSkv7Qn1Hu8kym9DFU=', '30.649892', '104.075004');
+INSERT INTO `t_customer` VALUES (20, '长沙市', 'S298F1ZVbi7c77iUwa6OnDEcb3pgtYStXJ-xcSVoKGf2fJyIIFm4dxehS0SSoZoiDuyn35xWW1_EBIBtLqJdKFkcumMak-bRrXKOH5-4AOlY8vMqqqTXn3D5MbSoHJId7I6HYzqWnaRDg-4HnMd9Nt24WgQu-fpUOg_T0kpqyG4=', '28.228681', '112.938988');
+INSERT INTO `t_customer` VALUES (21, '西安市', 'sdvWgGwqvgq8AA5Gqqb2sfo7GyiSJ3k7bmirgaJUh-3VueoM1umqmyBMx6Ndgo0pdKERY_UsbrzsZmdt0cIe5DvagnEr9_dpD-akfOcMLgfg8weRBp8qOctMn47MuefX3A5tak7X8ivmeyqUiB3vcrPwgQxrH0_ieDmTdf0AWJA=', '34.341104', '108.940015');
+INSERT INTO `t_customer` VALUES (22, '哈尔滨市', 'JOr-I6jqZ7s1bBCcV3ffxoelvKVg9tq0FbiBMARBnhA2tfIjXHpXS9yjsB9yC0u1ZL2-Tsa3S0fcHznwgLW1iDvDfqVEGuuQw0kNcuEwMjIwMe-0rRHkxgreYkrVgb84jpiax5l4ScH7v00GxQw0S2UOIZtj1WgMA2KFsZ7t7sg=', '45.80321', '126.535003');
+INSERT INTO `t_customer` VALUES (23, '长春市', 'AQzwKX2_KGMV51LBnVQvpEc9spkGBTfrALnWW_fWSQC5MrPhHf23D8FUFkJPNyHR5sx6yIVXXO3SETJWUALjysUSOYuidUG-UNS5g30mj3JcObBjX-6m2O45YvrRHZlkb9NTkrN4756rNAiR7J1zf8O6YkyrIzWcPJXKqTfrDCQ=', '43.816209', '125.323995');
+INSERT INTO `t_customer` VALUES (24, '南昌市', 'VEOXq3QTydd8HD3wUSZchMphNAEY4Z5p7SRfAJgixQty34IIhAVmAvue_Or9E24UpcTghJvhwfV99rRsJY77oJXnnhrWj9kZbSZ0qffabJwow_CQ1uRRuJfrmFpnBJWQSdjZSglTuw2OX5PvO2bz3fxmU8ryWs41-oqnVMqWndA=', '28.683791', '115.857992');
+INSERT INTO `t_customer` VALUES (25, '呼和浩特市', 'aV2zTM-Dyhzeta1oZQ3tt8o3cXS9Wwuhu38XWXMFm2PvuOtVnPGh8ER6CMHTisAEkRZja7_CxsdgJooNqmnNlxpGa9xNQ3ZdyVs62B6AhkM3GVtfM45q8UVVGESWgjnbBrTNTZzm7vA58mlcLagkna4OkUBmKaUhzTpoJhDBs14=', '40.842412', '111.749016');
+INSERT INTO `t_customer` VALUES (26, '天津市', 'MoW6lvRLurMOKmJSwl600KQWmYcB_OKQC8V7bbKEwOmEK-aQxxKrcZG490tv_6Ga0CocWlL-OrNQm9eNX7yxpwkvQMD78_77LWSsvol4O0MsxWlN-n86EwT7oQflef_7Vc1HjwTZHuCJNIB4TCrt7Qn-ctvzN1a-iY_YGhtLiC8=', '39.087796', '117.202996');
+INSERT INTO `t_customer` VALUES (27, '昆明市', 'tbs-f7eSlG63MXgkRPXVFjiAm9llN_flczN-5wl9bKMWUKDZ9u3_N80ep6iE6KVz_LwHlq1edAvZjS795vH_0-jvycM3ZeMLT6aFa2lmBk33xQFw-xoL-bAmiGNJUgXSYs08ex3t0AUyaaQHTHOwXQXxyfvWtex85q5rGZro1VA=', '24.867694', '102.846007');
+INSERT INTO `t_customer` VALUES (28, '兰州市', 'wcGyIUjpo1_JJP2CE-atjPFFcpJa_cW3Jk9I-XuFk1quVdTX23XvMFxJY2k1L9mCIX5Q2_JnSJSy-MgCBj2H10OP6gQgOViaWstgONLC2pBJ06WWIysoBe4nhv4xQuHfoVTM2lE66Mx_3umE_GCicDD_7YGkOYtRRn8j6Cc-6cU=', '36.061307', '103.834017');
+INSERT INTO `t_customer` VALUES (29, '贵阳市', 'yFyhT0j6HcxPB5rUCcDVwpdJkSJVRwYMZpimptlsnzJY3mDqwqo8wgdASbaEEpoH1f_VnydYqNdTGpBhuT33fIySxSfUbZh8gq2X92NPNssiDq66qW1QDgRnkom4Wl1hPHK_9kc8D7U1_90l_ZVw3wpSyh3dUT6cZO6rjXn-F1k=', '26.647615', '106.630011');
+INSERT INTO `t_customer` VALUES (30, '广州市', 'zM1PtOt7Fgy__Na1tNFAbuGru6diLOk1O-6UvkO85BKkkGax_j_FAVXDlh2_3vsYanzAW3_dodCN9klbKt9B8AJsGuVCplKkTd3CdA0mrCuugoQhS_-iVlEX0mkwc-ZiLb93iQB3J5xtqqTEvZTBDkf9-Kj-7OrwECNytI1pdxc=', '23.129093', '113.265');
+
+SET FOREIGN_KEY_CHECKS = 1;
