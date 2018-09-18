@@ -19,21 +19,10 @@
 			<groupId>com.xdbigdata.framework</groupId>
 			<artifactId>framework-service</artifactId>
 		</dependency>
-		<!-- com xdbigdata framework swagger module -->
-		<dependency>
-			<groupId>com.xdbigdata.framework</groupId>
-			<artifactId>swagger-spring-boot-starter</artifactId>
-		</dependency>
 		<!-- com xdbigdata framework web module -->
 		<dependency>
 			<groupId>com.xdbigdata.framework</groupId>
 			<artifactId>framework-web</artifactId>
-		</dependency>
-		<!-- com xdbigdata framework test module -->
-		<dependency>
-			<groupId>com.xdbigdata.framework</groupId>
-			<artifactId>framework-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<!-- lombok -->
 		<dependency>
@@ -58,7 +47,7 @@
 			<dependency>
 				<groupId>com.xdbigdata.framework</groupId>
 				<artifactId>framework-parent</artifactId>
-				<version>1.0.4</version>
+				<version>1.0.1</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
