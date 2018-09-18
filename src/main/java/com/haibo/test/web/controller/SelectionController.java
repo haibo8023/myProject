@@ -3,7 +3,6 @@ package com.haibo.test.web.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.haibo.test.utils.HttpClientUtil;
 import com.xdbigdata.framework.web.model.JsonResponse;
-import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +15,6 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/api")
-@Api(description = "移动端选课接口列表")
 public class SelectionController {
     private HttpClientUtil httpClientUtil = null;
     private HttpClientUtil httpClient = null;
