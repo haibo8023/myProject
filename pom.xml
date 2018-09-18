@@ -24,6 +24,11 @@
 			<groupId>com.xdbigdata.framework</groupId>
 			<artifactId>framework-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.xdbigdata.framework</groupId>
+			<artifactId>framework-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
