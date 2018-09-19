@@ -54,6 +54,7 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
             ResponseVo responseVo = (ResponseVo) JSONObject.toJavaObject(jsStr, ResponseVo.class);
             SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
             if (null != responseVo && responseVo.getCode().equals(200)) {
+                System.out.println(responseVo.toString());
                 List<CityInfo> cityInfoList = responseVo.getRanks();
                 for (CityInfo cityInfo : cityInfoList) {
                     if (useCommit(cityInfo.getTotal())) {
