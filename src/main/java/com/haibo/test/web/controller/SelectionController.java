@@ -24,7 +24,7 @@ public class SelectionController {
     private static String infoUrl = "https://www.jiyou-tech.com/2018/287/php/info.php";
 
     @GetMapping("/getRank")
-    public JsonResponse getRank() {
+    public JsonResponse getRank() throws Exception{
         httpClientUtil = new HttpClientUtil();
         Map<String, String> createMap = new HashMap<String, String>();
         createMap.put("customer", customer);
@@ -34,7 +34,7 @@ public class SelectionController {
     }
 
     @GetMapping("/getInfo")
-    public JsonResponse getInfo() {
+    public JsonResponse getInfo() throws Exception{
         httpClient = new HttpClientUtil();
         Map<String, String> createMap = new HashMap<String, String>();
         createMap.put("customer", customer);

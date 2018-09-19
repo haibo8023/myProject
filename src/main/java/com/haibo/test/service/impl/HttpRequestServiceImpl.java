@@ -89,7 +89,6 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                     }
                 }
             } else {
-                System.out.println(sdf.format(new Date()) + "请求主机失败");
                 log.error(sdf.format(new Date()) + "请求主机失败");
             }
             // }

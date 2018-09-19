@@ -20,7 +20,7 @@ import java.util.Map.Entry;
  * 利用HttpClient进行post请求的工具类
  */
 public class HttpClientUtil {
-    public String doPost(String url, Map<String, String> map, String charset) {
+    public String doPost(String url, Map<String, String> map, String charset) throws Exception {
         HttpClient httpClient = null;
         HttpPost httpPost = null;
         String result = null;
