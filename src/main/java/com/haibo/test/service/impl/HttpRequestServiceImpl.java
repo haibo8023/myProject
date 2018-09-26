@@ -89,12 +89,11 @@ public class HttpRequestServiceImpl extends BaseServiceImpl<Customer, CustomerMa
                     }
                 }
             } else {
-                log.error(sdf.format(new Date()) + "请求主机失败" + responseVo.toString());
+                log.error(sdf.format(new Date()) + "请求主机失败" + responseVo);
             }
             // }
         } catch (Exception e) {
             e.printStackTrace();
-            log.error(e.getMessage());
         }
     }
 
