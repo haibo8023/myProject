@@ -1,5 +1,5 @@
 /*
- Navicat MySQL Data Transfer
+ Navicat MySQL QueryData Transfer
 
  Source Server         : 127.0.0.1_3306
  Source Server Type    : MySQL
