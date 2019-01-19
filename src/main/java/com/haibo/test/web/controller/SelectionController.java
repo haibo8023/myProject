@@ -21,7 +21,7 @@ public class SelectionController {
 
     @ApiOperation(value = "提交接口")
     @PostMapping("/commit")
-    public JsonResponse commit(String cookie1, String cookie2) throws Exception {
+    public JsonResponse commit(String cookie1, String cookie2,String cookie3) throws Exception {
         return JsonResponse.successMessage(httpRequestService.testMain(cookie1, cookie2));
     }
 }
