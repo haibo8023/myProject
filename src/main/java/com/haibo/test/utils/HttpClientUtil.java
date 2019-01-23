@@ -39,11 +39,12 @@ public class HttpClientUtil {
             httpPost.addHeader("cache-control", "no-cache");
             httpPost.addHeader("Cookie", cookie);
             httpPost.addHeader("postman-token", "74162342-d591-d89c-2f7b-b949454bef22");
-            httpPost.addHeader("X-Requested-With", "XMLHttpRequest");
+            httpPost.addHeader("X-Requested-With", "com.android.bankabc");
             httpPost.addHeader("Connection", "keep-alive");
             httpPost.addHeader("content-type", "application/json;charset=utf-8");
-            httpPost.addHeader("Referer", "https://servicewechat.com/wx13b9861d3e9fcdb0/9/page-frame.html");
+            httpPost.addHeader("Referer", "https://enjoy.abchina.com/yh/GiftTokenDraw/%7Bps_68b71e13c7edcc30c0cbcf585fb94291%7D_common?custId=1622514165179228&phoneNo=15756308704");
             httpPost.addHeader("User-Agent", userAgent);
+            httpPost.addHeader("Accept-Encoding","gzip, deflate");
             if (null != jsonObject) {
                 //解决中文乱码问题
                 StringEntity entity = new StringEntity(jsonObject.toString(), "utf-8");

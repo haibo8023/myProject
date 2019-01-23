@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>com.xdbigdata.framework</groupId>
 			<artifactId>framework-test</artifactId>
-			<scope>test</scope>
+			<!--<scope>test</scope>-->
 		</dependency>
 		<!-- lombok -->
 		<dependency>
