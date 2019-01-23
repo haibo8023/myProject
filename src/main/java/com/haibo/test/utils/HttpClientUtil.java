@@ -42,7 +42,7 @@ public class HttpClientUtil {
             httpPost.addHeader("X-Requested-With", "com.android.bankabc");
             httpPost.addHeader("Connection", "keep-alive");
             httpPost.addHeader("content-type", "application/json;charset=utf-8");
-            httpPost.addHeader("Referer", "https://enjoy.abchina.com/yh/GiftTokenDraw/%7Bps_68b71e13c7edcc30c0cbcf585fb94291%7D_common?custId=1622514165179228&phoneNo=15756308704");
+            httpPost.addHeader("Referer", "https://enjoy.abchina.com/yh/GiftTokenDraw/%7Bps_2366ded750f442b6d580fb4dffa3a2e2%7D_common?custId=1622514165179228&phoneNo=15756308704");
             httpPost.addHeader("User-Agent", userAgent);
             httpPost.addHeader("Accept-Encoding","gzip, deflate");
             if (null != jsonObject) {
