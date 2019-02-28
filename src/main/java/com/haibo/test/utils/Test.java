@@ -1,11 +1,14 @@
 package com.haibo.test.utils;
 
 
-import com.alibaba.fastjson.JSONObject;
 import com.haibo.test.Application;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * @author XD
@@ -23,8 +26,15 @@ public class Test {
 
     @org.junit.Test
     public void test() throws Exception {
-        String result = HttpClientUtil.doGet(getDateId, null);
-        JSONObject jsStr1 = JSONObject.parseObject(result);
-        System.out.println(jsStr1.toJSONString());
+        String date = "20190228";
+        System.out.println(DateUtil.strToDateFormat(date));
+        List<Date> dateList = new ArrayList<>();
+        Date date1 = new Date();
+        Date date2 = new Date();
+        Date date3 = new Date();
+        dateList.add(date1);
+        dateList.add(date2);
+        dateList.add(date3);
+        System.out.println(DateUtil.convertListDate(dateList));
     }
 }
