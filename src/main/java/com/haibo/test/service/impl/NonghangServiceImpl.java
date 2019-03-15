@@ -33,24 +33,24 @@ public class NonghangServiceImpl {
     private static String commiturl = "https://wx.healthych.com/order/subscribe/add.do?";
     private static String getId = "https://wx.healthych.com/base/department/vaccines.do?";
     private static String vaccCode = "8803";
-    List<String> strings = Arrays.asList("5101151308");
+    List<String> strings = Arrays.asList("5101810004","5101810003","5101810002");
 
     @Scheduled(fixedRate = 100)
     @Test
     public void testMain() throws Exception {
-        SimpleDateFormat sdf = new SimpleDateFormat("mm:ss SSS");
+        SimpleDateFormat sdf = new SimpleDateFormat("ss SSS");
         Integer departmentVaccineId = null;
         for (String adress : strings) {
             String url1 = getId + "depaCode=" + adress + "&vaccineCode=" + vaccCode;
             String result1 = HttpClientUtil.doGet(url1, null);
             JSONObject jsStr1 = JSONObject.parseObject(result1);
-            System.out.println(sdf.format(new Date()) + "getId" + jsStr1.toJSONString());
+            System.out.println(sdf.format(new Date()) + "  :getId"+"____"+adress);
             JsonRootBean jsonRootBean = JSONObject.toJavaObject(jsStr1, JsonRootBean.class);
             departmentVaccineId = jsonRootBean.getData().get(0).getId();
             String url2 = getDateUrl + "depaCode=" + adress + "&vaccCode=" + vaccCode + "&departmentVaccineId=" + departmentVaccineId + "&vaccineIndex=1";
             String result2 = HttpClientUtil.doGet(url2, null);
             JSONObject jsStr2 = JSONObject.parseObject(result2);
-            System.out.println(sdf.format(new Date()) +"getDateUrl" + jsStr2.toJSONString());
+            System.out.println(sdf.format(new Date()) +"  :getDateUrl" + jsStr2.get("data").toString());
             ReturnDate returnDate = JSONObject.toJavaObject(jsStr2, ReturnDate.class);
             if (returnDate != null) {
                 if (returnDate.getCode().equals("0000") && returnDate.isOk() && CollectionUtils.isNotEmpty(returnDate.getData().getDateList())) {
@@ -59,7 +59,7 @@ public class NonghangServiceImpl {
                         String url3 = getDateOrder + "depaCode=" + adress + "&vaccCode=" + vaccCode + "&vaccIndex=1&days=" + DateUtil.convertListDate(returnDate.getData().getDateList()) + "&departmentVaccineId=" + departmentVaccineId;
                         String result3 = HttpClientUtil.doGet(url3, null);
                         JSONObject jsStr3 = JSONObject.parseObject(result3);
-                        System.out.println(sdf.format(new Date()) +"getDateOrder" + jsStr3.toJSONString());
+                        System.out.println(sdf.format(new Date()) +"  :getDateOrder" + jsStr3.get("data").toString());
                         DateOrder dateOrder = JSONObject.toJavaObject(jsStr3, DateOrder.class);
                         List<Data3> data3s = dateOrder.getData();
                         for (Data3 date3 : data3s) {
