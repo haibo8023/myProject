@@ -84,8 +84,8 @@ public class HttpClientUtil {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         httpclient = new SSLClient();
         RequestConfig requestConfig = RequestConfig.custom()
-                .setConnectTimeout(1000).setConnectionRequestTimeout(1000)
-                .setSocketTimeout(1000).build();
+                .setConnectTimeout(100).setConnectionRequestTimeout(100)
+                .setSocketTimeout(100).build();
         String resultString = "";
         CloseableHttpResponse response = null;
         try {
