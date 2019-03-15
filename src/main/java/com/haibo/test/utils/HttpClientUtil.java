@@ -21,7 +21,7 @@ import java.util.Map;
  * 利用HttpClient进行post请求的工具类
  */
 public class HttpClientUtil {
-    private static String userAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16D57 MicroMessenger/7.0.3(0x17000321) NetType/WIFI Language/zh_CN";
+    private static String userAgent = "Mozilla/5.0 (Linux; Android 8.0.0; MI 5s Build/OPR1.170623.032; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044506 Mobile Safari/537.36 MMWEBID/9939 MicroMessenger/7.0.3.1400(0x2700033B) Process/tools NetType/WIFI Language/zh_CN";
     public static String doPost(String url, JSONObject jsonObject, String userAgent, String cookie) throws Exception {
 //        HttpClient httpClient = null;
         CloseableHttpResponse response = null;
