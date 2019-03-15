@@ -11,7 +11,6 @@ import com.haibo.test.utils.DateUtil;
 import com.haibo.test.utils.HttpClientUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
-import org.junit.Test;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +35,7 @@ public class NonghangServiceImpl {
     List<String> strings = Arrays.asList("5101810004","5101810003","5101810002");
 
     @Scheduled(fixedRate = 100)
-    @Test
+//    @Test
     public void testMain() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("ss SSS");
         Integer departmentVaccineId = null;
