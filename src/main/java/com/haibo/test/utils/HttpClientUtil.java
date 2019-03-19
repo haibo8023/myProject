@@ -84,8 +84,8 @@ public class HttpClientUtil {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         httpclient = new SSLClient();
         RequestConfig requestConfig = RequestConfig.custom()
-                .setConnectTimeout(100).setConnectionRequestTimeout(100)
-                .setSocketTimeout(100).build();
+                .setConnectTimeout(10).setConnectionRequestTimeout(10)
+                .setSocketTimeout(10).build();
         String resultString = "";
         CloseableHttpResponse response = null;
         try {
@@ -101,9 +101,9 @@ public class HttpClientUtil {
             // 创建http GET请求
             HttpGet httpGet = new HttpGet(uri);
             httpGet.setConfig(requestConfig);
-            httpGet.addHeader("st","84849353e91b3fab0474f3b68551cc13");
-            httpGet.addHeader("tk","24fad0f25aa79cf3b701a15f64c9276f_b277b5682358d05dd13692dd16ea3f06");
-            httpGet.addHeader("Cookie","CNZZDATA1261985103=1400821721-1552574741-%7C1552629315; _xxhm_=%7B%22address%22%3A%22%22%2C%22awardPoints%22%3A0%2C%22birthday%22%3A792691200000%2C%22createTime%22%3A1545094567000%2C%22headerImg%22%3A%22http%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2FP56jzUdF1RGL2ib6af1W5eOicKGb2O52LkbdSNTcQUdgu8mlHGib6vdMCFsHHq2WNglIsn93CDBVnQ32TibEaSdum8iaQOPXHHs2j%2F132%22%2C%22id%22%3A2546588%2C%22idCardNo%22%3A%22%22%2C%22isRegisterHistory%22%3A0%2C%22latitude%22%3A0.0%2C%22longitude%22%3A0.0%2C%22mobile%22%3A%2219956034358%22%2C%22modifyTime%22%3A1552629397000%2C%22name%22%3A%22%E6%9D%8E%E5%A9%B7%22%2C%22nickName%22%3A%22%E5%AE%88%E6%8A%A4%E6%98%9F%22%2C%22openId%22%3A%22og46NxIukAn0AXBIShtCYfvVd0io%22%2C%22regionCode%22%3A%22510108%22%2C%22registerTime%22%3A1551169361000%2C%22sex%22%3A2%2C%22source%22%3A1%2C%22uFrom%22%3A%22depa_vacc_detail%22%2C%22unionid%22%3A%22o8NLkwUU3vS3xR8QGXO-FOO3Hx1w%22%2C%22wxSubscribed%22%3A1%2C%22yn%22%3A1%7D; _xzkj_=24fad0f25aa79cf3b701a15f64c9276f_b277b5682358d05dd13692dd16ea3f06; UM_distinctid=1697cf442da2a1-062b1fde633fa7-7e145f62-3d10d-1697cf442db2e9");
+            httpGet.addHeader("st","dc06a3c4de66e7612016ba9225d05340");
+            httpGet.addHeader("tk","7a2615294971e5e8a5af670bacafcf89_578482e75a975e212c2938f6e62c9807");
+            httpGet.addHeader("Cookie","UM_distinctid=1697ed9e5ab7-08abc69a284f5d-650e7724-38400-1697ed9e5ad55; _xzkj_=7a2615294971e5e8a5af670bacafcf89_578482e75a975e212c2938f6e62c9807; _xxhm_=%7B%22address%22%3A%22%22%2C%22awardPoints%22%3A0%2C%22birthday%22%3A792691200000%2C%22createTime%22%3A1512449976000%2C%22headerImg%22%3A%22http%3A%2F%2Fthirdwx.qlogo.cn%2Fmmopen%2FQ3auHgzwzM5oMwqibf8N4BiaSnIqpomvibTwE2SnGKLf28WCUBl8riaLSGVf1ULHibvlMPbgq54BCicbBOgfb7tDhzEg%2F132%22%2C%22id%22%3A680626%2C%22idCardNo%22%3A%22513030199502145624%22%2C%22isRegisterHistory%22%3A0%2C%22latitude%22%3A30.782467%2C%22longitude%22%3A103.85257%2C%22mobile%22%3A%2215756308704%22%2C%22modifyTime%22%3A1552973472000%2C%22name%22%3A%22%E6%9D%8E%E5%A9%B7%22%2C%22nickName%22%3A%22%E6%B5%B7%E6%B3%A2%22%2C%22openId%22%3A%22og46NxJXEc1a-A8DxVnWI8XbZ6kg%22%2C%22regionCode%22%3A%22510108%22%2C%22registerTime%22%3A1551575558000%2C%22sex%22%3A2%2C%22source%22%3A1%2C%22uFrom%22%3A%22depa_vacc_detail%22%2C%22unionid%22%3A%22o8NLkwakY18X3htJiucxnLRO4zmw%22%2C%22wxSubscribed%22%3A1%2C%22yn%22%3A1%7D; CNZZDATA1261985103=1274081954-1552606006-%7C1552973861");
             httpGet.setHeader("content-type","application/json;charset=utf-8");
             httpGet.setHeader("User-Agent", userAgent);
             // 执行请求

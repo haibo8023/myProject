@@ -31,7 +31,7 @@ public class NonghangServiceImpl {
     private static String getId = "https://wx.healthych.com/base/department/vaccines.do?";
     private static String vaccCode = "8803";
     private static String linkmanId = "489926";
-    List<String> strings = Arrays.asList("5101810004", "5101810003", "5101810002");
+    List<String> strings = Arrays.asList("5101080912");
 
     @Scheduled(fixedRate = 10)
 //    @Test
@@ -61,7 +61,7 @@ public class NonghangServiceImpl {
                         DateOrder dateOrder = JSONObject.toJavaObject(jsStr3, DateOrder.class);
                         List<Data3> data3s = dateOrder.getData();
                         for (Data3 date3 : data3s) {
-                            if (date3.getMaxSub() > 0) {
+                            if (date3.getMaxSub() >0) {
                                 Integer dateId = null;
                                 String dateValue = DateUtil.strToDateFormat(date3.getDay());
                                 String url4 = getDateIdUrl + "depaCode=" + adress + "&vaccCode=" + vaccCode + "&vaccIndex=1&subsribeDate=" + dateValue + "&departmentVaccineId=" + departmentVaccineId + "&linkmanId=" + linkmanId;
