@@ -112,6 +112,8 @@ public class HttpClientUtil {
             // 判断返回状态是否为200
             if (response.getStatusLine().getStatusCode() == 200) {
                 resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
+            }else {
+                System.out.println("网页内容："+EntityUtils.toString(response.getEntity(), "utf-8")); // 获取网页内容
             }
         } catch (Exception e) {
             e.printStackTrace();

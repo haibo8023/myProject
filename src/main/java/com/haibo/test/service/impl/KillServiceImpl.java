@@ -11,8 +11,6 @@ import org.junit.Test;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,17 +35,16 @@ public class KillServiceImpl {
     //    @Scheduled(fixedRate = 10)
     @Test
     public void testMain() throws Exception {
-        SimpleDateFormat sdf = new SimpleDateFormat("ss SSS");
         String url2 = seckillCheckstock + "id=" + departmentVaccineId;
         String result2 = HttpClientUtil.doGet(url2, null);
         JSONObject jsStr2 = JSONObject.parseObject(result2);
-        log.warn(sdf.format(new Date()) + "  :seckillCheckstock" + jsStr2.get("data").toString());
+        log.warn("seckillCheckstock" + jsStr2.get("data").toString());
         Integer data = Integer.parseInt(String.valueOf(jsStr2.get("data")));
         if (data > 0) {
             String url3 = seckillDetailVo + "id=" + departmentVaccineId;
             String result3 = HttpClientUtil.doGet(url3, null);
             JSONObject jsStr3 = JSONObject.parseObject(result3);
-            log.warn(sdf.format(new Date()) + "  :seckillDetailVo" + jsStr3.get("data").toString());
+            log.warn("seckillDetailVo" + jsStr3.get("data").toString());
             KillDetail killDetail = JSONObject.toJavaObject(jsStr3, KillDetail.class);
             if (killDetail.getCode().equals("0000")) {
                 List<Day> dateList = killDetail.getData().getDays();
@@ -59,11 +56,10 @@ public class KillServiceImpl {
                             String url4 = submitSeckill + "departmentVaccineId=" + departmentVaccineId + "&vaccineIndex=1&linkmanId=" + linkmanId + "&subscribeDate=" + dateValue + "&sign=" + sign;
                             String result4 = HttpClientUtil.doGet(url4, null);
                             JSONObject jsStr4 = JSONObject.parseObject(result4);
-                            log.warn(sdf.format(new Date()) + "  :submitSeckill" + jsStr4.toJSONString());
+                            log.warn("submitSeckill" + jsStr4.toJSONString());
                         }
                     }
                 }
-
             }
         }
     }
