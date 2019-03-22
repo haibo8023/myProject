@@ -8,6 +8,7 @@ import com.haibo.test.utils.DateUtil;
 import com.haibo.test.utils.HttpClientUtil;
 import com.haibo.test.utils.MD5Utils;
 import org.junit.Test;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -31,12 +32,12 @@ public class MoreKillServiceImpl {
     private static String submitSeckill = "https://wx.healthych.com/seckill/vaccine/subscribe.do?";
     private static String getId = "https://wx.healthych.com/base/department/vaccines.do?";
     private static String vaccCode = "8803";
-    private static String linkmanId = "489926";
+    private static String linkmanId = "545831";
     List<String> strings = Arrays.asList("5101140011", "5101140012");
 //    List<String> strings = Arrays.asList("5101120401","5101120406","5101120405");
 
-    //    @Scheduled(fixedRate = 10)
-    @Test
+    @Scheduled(fixedRate = 10)
+    //@Test
     public void testMain() throws Exception {
         Integer departmentVaccineId = null;
         for (String adress : strings) {

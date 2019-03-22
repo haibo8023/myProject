@@ -29,7 +29,7 @@ public class KillServiceImpl {
     private static String seckillDetailVo = "https://wx.healthych.com/seckill/vaccine/detailVo.do?";
     private static String submitSeckill = "https://wx.healthych.com/seckill/vaccine/subscribe.do?";
     private static String vaccCode = "8803";
-    private static String linkmanId = "2546588";
+    private static String linkmanId = "545831";
     private static Integer departmentVaccineId = 3560;
 
     //    @Scheduled(fixedRate = 10)
