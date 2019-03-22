@@ -4,6 +4,7 @@ package com.haibo.test.model.domain;
 
 public class KillDetail {
     private String code;
+    private String msg;
 
     private Data data;
 
@@ -31,5 +32,13 @@ public class KillDetail {
 
     public void setOk(Boolean ok) {
         this.ok = ok;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }
