@@ -137,7 +137,10 @@ public class HttpUtils {
             connection.setRequestProperty("Connection", "keep-alive");
             connection.setRequestProperty("st", PublicConstant.st);
             connection.setRequestProperty("tk", PublicConstant.tk);
-            connection.setRequestProperty("Cookie", PublicConstant.Cookie);
+            connection.setRequestProperty("Cookie", PublicConstant.Cookie1);
+            connection.setRequestProperty("Cookie", PublicConstant.Cookie2);
+            connection.setRequestProperty("Cookie", PublicConstant.Cookie3);
+            connection.setRequestProperty("Cookie", PublicConstant.Cookie4);
             connection.setRequestProperty("content-type", "application/json;charset=utf-8");
             connection.setRequestProperty("Connection", "keep-alive");
             connection.setRequestProperty("Referer", "https://wx.healthych.com/index.html");

@@ -130,7 +130,10 @@ public class HttpClientUtils {
         httpRequestBase.setHeader("Connection", "keep-alive");
         httpRequestBase.setHeader("st", PublicConstant.st);
         httpRequestBase.setHeader("tk", PublicConstant.tk);
-        httpRequestBase.setHeader("Cookie", PublicConstant.Cookie);
+        httpRequestBase.setHeader("Cookie", PublicConstant.Cookie1);
+        httpRequestBase.setHeader("Cookie", PublicConstant.Cookie2);
+        httpRequestBase.setHeader("Cookie", PublicConstant.Cookie3);
+        httpRequestBase.setHeader("Cookie", PublicConstant.Cookie4);
         httpRequestBase.setHeader("content-type", "application/json;charset=utf-8");
         httpRequestBase.setHeader("Connection", "keep-alive");
         httpRequestBase.setHeader("Referer", "https://wx.healthych.com/index.html");
