@@ -22,7 +22,7 @@ import java.util.List;
 public class Kill3ServiceImpl {
     private static String seckillDetailVo = "https://wx.healthych.com/seckill/vaccine/detailVo.do?";
     private static String submitSeckill = "https://wx.healthych.com/seckill/vaccine/subscribe.do?";
-    private static Integer departmentVaccineId = 4248;
+    private static Integer departmentVaccineId = 4885;//大面公立
 
         @Scheduled(fixedRate = 10)
 //    @Test

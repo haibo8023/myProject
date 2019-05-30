@@ -21,7 +21,7 @@ import java.util.List;
 public class Kill2ServiceImpl {
     private static String seckillDetailVo = "https://wx.healthych.com/seckill/vaccine/detailVo.do?";
     private static String submitSeckill = "https://wx.healthych.com/seckill/vaccine/subscribe.do?";
-    private static Integer departmentVaccineId = 4248;
+    private static Integer departmentVaccineId = 4887;//航天社区
 
     @Scheduled(fixedRate = 10)
 //    @Test
