@@ -66,13 +66,17 @@ public class HttpClientUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (response.getStatusLine().getStatusCode() == 200) {
-            HttpEntity entity = response.getEntity();
-            return EntityUtils.toString(entity, "utf-8");
-        } else {
-            System.out.println("网页内容：" + EntityUtils.toString(response.getEntity(), "utf-8")); // 获取网页内容
+        if (null != response.getStatusLine()) {
+            if (response.getStatusLine().getStatusCode() == 200) {
+                HttpEntity entity = response.getEntity();
+                return EntityUtils.toString(entity, "utf-8");
+            } else {
+                System.out.println("网页内容：" + EntityUtils.toString(response.getEntity(), "utf-8"));
+            }
+        }else {
+            System.out.println("网页内容：" + EntityUtils.toString(response.getEntity(), "utf-8"));
         }
-        return "";
+        return null;
     }
 
 
@@ -142,6 +146,7 @@ public class HttpClientUtils {
                 .build();
         httpRequestBase.setConfig(requestConfig);
     }
+
     private class DefaultHttpRequestRetryHandler implements HttpRequestRetryHandler {
         @Override
         public boolean retryRequest(IOException exception, int executionCount, HttpContext context) {

@@ -41,7 +41,7 @@ public class Kill2ServiceImpl {
                         String url4 = submitSeckill + "departmentVaccineId=" + departmentVaccineId + "&vaccineIndex=1&linkmanId=" + PublicConstant.linkmanId + "&subscribeDate=" + dateValue + "&sign=" + sign;
                         String result4 = httpClientUtil.sendGet(url4, null);
                         JSONObject jsStr4 = JSONObject.parseObject(result4);
-                        System.out.println("submitSeckill" + jsStr4.toJSONString());
+                        System.out.println(dateValue + "submitSeckill2" + jsStr4.toJSONString());
                     }
                 }
             }
