@@ -18,7 +18,7 @@ public class Test {
     private static String linkmanId = "489926";
     private static String dateValue = "2019-06-05";
 
-    @org.junit.Test
+//    @org.junit.Test
     public void test() throws Exception {
         HttpClientUtils httpClientUtil = new HttpClientUtils();
 //        String result1 = HttpClientUtil.doGet(seckillDetailVo, null);
