@@ -30,6 +30,9 @@ public class Kill2ServiceImpl {
         String url3 = seckillDetailVo + "id=" + departmentVaccineId;
         String result3 = httpClientUtil.sendGet(url3, null);
         JSONObject jsStr3 = JSONObject.parseObject(result3);
+        if (null == result3) {
+            return;
+        }
         KillDetail killDetail = JSONObject.toJavaObject(jsStr3, KillDetail.class);
         if (killDetail.getCode().equals("0000")) {
             List<Day> dateList = killDetail.getData().getDays();
