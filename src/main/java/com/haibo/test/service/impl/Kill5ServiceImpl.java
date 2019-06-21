@@ -18,10 +18,10 @@ import java.util.List;
  * @date 2019/1/23 15:54
  */
 @Service
-public class Kill2ServiceImpl {
+public class Kill5ServiceImpl {
     private static String seckillDetailVo = "https://wx.healthych.com/seckill/vaccine/detailVo.do?";
     private static String submitSeckill = "https://wx.healthych.com/seckill/vaccine/subscribe.do?";
-    private static Integer departmentVaccineId = 3179;//航天社区
+    private static Integer departmentVaccineId = 3180;//航天社区
 
     @Scheduled(fixedRate = 10)
 //    @Test

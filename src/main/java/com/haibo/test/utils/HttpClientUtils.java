@@ -66,15 +66,17 @@ public class HttpClientUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (null != response.getStatusLine()) {
-            if (response.getStatusLine().getStatusCode() == 200) {
-                HttpEntity entity = response.getEntity();
-                return EntityUtils.toString(entity, "utf-8");
-            } else {
+        if (null != response){
+            if (null != response.getStatusLine()) {
+                if (response.getStatusLine().getStatusCode() == 200) {
+                    HttpEntity entity = response.getEntity();
+                    return EntityUtils.toString(entity, "utf-8");
+                } else {
+                    System.out.println("网页内容：" + EntityUtils.toString(response.getEntity(), "utf-8"));
+                }
+            }else {
                 System.out.println("网页内容：" + EntityUtils.toString(response.getEntity(), "utf-8"));
             }
-        }else {
-            System.out.println("网页内容：" + EntityUtils.toString(response.getEntity(), "utf-8"));
         }
         return null;
     }
